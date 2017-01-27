@@ -49,6 +49,14 @@
     $(document).trigger('onStepChange', {
       currentStep: currentStep
     });
+    setDataStep(currentStep);
+  };
+
+
+  function setDataStep(step) {
+    $(wrapper).attr({
+      'data-step' : step
+    });
   };
 
 

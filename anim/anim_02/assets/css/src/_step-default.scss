@@ -33,6 +33,8 @@
 // }
 
 
+
+
 // #wrapper #svg-wrapper #jar {
 //   display: none;
 // }
@@ -56,24 +58,37 @@
   display: none;
 }
 
-#wrapper #svg-wrapper #plate {
-  display: none;
-}
+// #wrapper #svg-wrapper #plate {
+//   display: none;
+// }
 
 #wrapper #svg-wrapper #plateSalt {
-  display: none;
+  // display: none;
 }
-#wrapper #svg-wrapper #plateSalt g[id*="saltParticle"] {
-  // transform: translateY(0);
-  display: none;
+// #wrapper #svg-wrapper #plateSalt g[id*="saltParticle"] {
+//   // transform: translateY(0);
+//   display: none;
+// }
+
+// #wrapper #svg-wrapper #jar {
+//   display: none;
+// }
+// #wrapper #svg-wrapper #jar #jarSalt {
+//   display: none;
+// }
+#wrapper #svg-wrapper #jar #jarSalt g[id*="jarSaltParticle"] {
+  // display: none;
 }
 
-#wrapper #svg-wrapper #jar {
+
+#wrapper[data-step="1"] #svg-wrapper #circle-1 {
+  display: none !important;
+}
+
+
+#wrapper[data-step="1"] #svg-wrapper #plateSalt {
   display: none;
 }
 #wrapper #svg-wrapper #jar #jarSalt {
-  display: none;
-}
-#wrapper #svg-wrapper #jar #jarSalt g[id*="jarSaltParticle"] {
-  display: none;
+  // display: none;
 }
