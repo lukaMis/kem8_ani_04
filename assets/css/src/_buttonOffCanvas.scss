@@ -1,0 +1,29 @@
+
+
+#buttonOffCanvasWrapper {
+  
+  width: 48px;
+  height: 48px;
+
+  position: absolute;
+
+  top: 40px;
+  left: 42px;
+
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0);
+  
+  transition: all 0.35s ease-out;
+}
+
+
+#buttonOffCanvas {
+  width: 48px;
+  height: 48px;
+  background-image: url('../../../assets/images/offCanvasButton.svg');
+}
+
+#buttonOffCanvasWrapper.active {
+  transform: translateX(342px) rotate(180deg);
+}

@@ -1,0 +1,19 @@
+
+
+// circle
+// circle-0
+// circle-1
+// circle-2
+
+
+g[id*="circle"] {
+  transition: all 0.36s linear 0.2s;
+}
+
+g[id*="circle"].hidden {
+  
+}
+
+#c-0-mol {
+  // opacity: 0;
+}

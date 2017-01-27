@@ -1,0 +1,19 @@
+
+// z-index: 1;
+
+
+.annotation {
+  z-index: 3;
+}
+
+#buttonOffCanvasWrapper {
+  z-index: 2;
+}
+
+#viewContent {
+ z-index: 1; 
+}
+
+#viewNav {
+ z-index: 0; 
+}

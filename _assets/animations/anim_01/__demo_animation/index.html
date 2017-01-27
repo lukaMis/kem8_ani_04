@@ -1,0 +1,48 @@
+<!doctype html>
+  <html lang="sl">
+    <head>
+      <!-- BRAGGING -->
+      <link rel="author" href="https://plus.google.com/+LukaMis/about" title="Luka Mis on Google+"/>
+      
+      <!-- META -->
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+      
+      <script type="text/javascript" src="bodymovin.js"></script>
+      <script type="text/javascript" src="data.js"></script>
+    </head>
+
+
+
+<body>
+    
+    <div id="container"></div>
+
+  <script type="text/javascript">
+  
+  console.log(animationData);
+
+//   bodymovin.loadAnimation({
+//   container: '#container',
+//   renderer: 'svg',
+//   loop: true,
+//   autoplay: true,
+//   animationData: JSON.parse('data.json')
+// });
+
+var element = document.getElementById('container');
+
+// var animationData = 'data.json';
+
+bodymovin.loadAnimation({
+  container: element, 
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  animationData: JSON.parse(animationData)
+});
+  </script>
+</body>
+</html>

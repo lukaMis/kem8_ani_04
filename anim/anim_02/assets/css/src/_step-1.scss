@@ -1,0 +1,121 @@
+
+
+#wrapper[data-step="1"] #svg-wrapper #jar {
+  display: block;
+}
+
+#wrapper[data-step="1"] #svg-wrapper #jar #jarSalt g[id*="jarSaltParticle"] {
+  display: block;
+}
+
+#wrapper[data-step="1"] #svg-wrapper #plate {
+  display: block;
+}
+
+#wrapper[data-step="1"] #svg-wrapper #circle-0 {
+  display: block;
+}
+
+
+#wrapper[data-step="1"] #svg-wrapper #plate {
+  animation-name: emptyThePlate;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes emptyThePlate {
+  from { 
+    transform: translateX(0) rotate(0);
+  }
+  to { 
+    transform: translateX(60px) rotate(-72deg);
+  }
+}
+
+
+// ANIMATION
+#wrapper[data-step="1"] #svg-wrapper #jar #jarSalt g[id*="jarSaltParticle"] {
+  transform: translateY(-260px);
+
+  animation-name: fallInJar, fadeIn;
+  animation-duration: 0.35s, 0.1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes fallInJar {
+  to { 
+    transform: translateY(0); 
+  }
+}
+@keyframes fadeIn { 
+  from { 
+    opacity: 0; 
+  } 
+}
+
+#wrapper[data-step="1"] #svg-wrapper #jar #jarSalt g[id*="jarSaltParticle"] {
+  @for $i from 0 to 44 {
+    $t: (1 + .01 * random(100)) * .35s;
+    &:nth-child(#{$i + 1}) {
+      animation-duration: .01 * random(100) * $t , 0.1s;
+      animation-delay: .01 * random(100) * $t /10 , 0s;
+    }
+  }
+}
+
+
+// #wrapper #svg-wrapper #circle-0 #c-0-mol {
+//   transform-origin: center center;
+//   -moz-transform-origin: 800px 368px;
+// }
+
+#wrapper[data-step="1"] #svg-wrapper #circle-0 #c-0-mol,
+#wrapper[data-step="1"] #svg-wrapper #circle-0 #c-0-mol #BA,
+#wrapper[data-step="1"] #svg-wrapper #circle-0 #c-0-mol #H2O {
+  transform-origin: center center;
+  -moz-transform-origin: 800px 368px;
+}
+
+#wrapper[data-step="1"] #svg-wrapper #circle-0 #c-0-mol #BA,
+#wrapper[data-step="1"] #svg-wrapper #circle-0 #c-0-mol #H2O {
+  animation-name: rotate;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+@keyframes rotate {
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+$maxCircle0ContentOffset: 12px;
+
+#wrapper[data-step="1"] #svg-wrapper #circle-0 #c-0-mol {
+  animation-name: yoyo;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+@keyframes yoyo {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  33% {
+    transform: translate($maxCircle0ContentOffset, -$maxCircle0ContentOffset);
+  }
+
+  66% {
+    transform: translate(-$maxCircle0ContentOffset, $maxCircle0ContentOffset);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+
+}

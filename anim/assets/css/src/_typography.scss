@@ -1,0 +1,95 @@
+
+#title-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 52px 0 0 225px;
+}
+
+#title-wrapper p, span {
+  color: rgb(0, 0, 0);
+}
+
+#title-wrapper p:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+#title span:nth-of-type(1) {
+  color: rgb(127, 127, 127);
+}
+
+#title span:nth-of-type(2) {
+  font-weight: bold;
+  margin-left: 16px;
+}
+
+// formula up
+#title-wrapper sup {
+  font-size: 15px;
+}
+
+// formula down
+#title-wrapper sub {
+  font-size: 15px;
+}
+
+
+#reaction-00 {
+
+}
+
+#reaction-01 {
+
+}
+
+$arrowHeadSize : 6px;
+
+#title-wrapper .arrow {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 14px;
+  margin: 0 10px;
+}
+
+.arrow::before {
+  content: "";
+
+  position: absolute;
+ 
+  width: 100%;
+  height: 2px;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  background-color: rgb(0, 0, 0);
+}
+
+
+.arrow::after {
+  position: absolute;
+
+  content: "";
+ 
+  width: 0; 
+  height: 0; 
+
+  border-bottom: $arrowHeadSize solid transparent;  /* left arrow slant */
+  border-top: $arrowHeadSize solid transparent; /* right arrow slant */
+  border-left: $arrowHeadSize solid #2f2f2f; /* bottom, add background color here */
+  font-size: 0;
+  line-height: 0;
+
+  top: 1px;
+  right: -2px;
+}
+
+
+.captions-wrapper sup {
+  font-size: 15px;
+}
+
+// formula down
+.captions-wrapper sub {
+  font-size: 15px;
+}

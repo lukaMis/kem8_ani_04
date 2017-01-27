@@ -1,0 +1,241 @@
+
+
+// #wrapper[data-step='1'] .caption:nth-of-type(1) {
+//   opacity: 1;
+// }
+
+
+// #wrapper[data-step='2'] .caption:nth-of-type(2) {
+//   opacity: 1;
+// }
+
+
+#svg-wrapper {
+  position: absolute;
+  width: 1024px;
+  height: 768px;
+  top: 0;
+  left: 0;
+}
+
+
+// electricity
+#wrapper #svg-wrapper svg #electricity {
+  opacity: 0;
+  transform-origin: 668px 401px;
+}
+#wrapper[data-step='2'] #svg-wrapper svg #electricity {
+  animation: electricityAnimation 5s infinite;
+  animation-timing-function: ease;
+  opacity: 1;
+  
+}
+@keyframes electricityAnimation {
+  
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+
+// WATER
+#wrapper #svg-wrapper svg #water {
+  transition: all 0.1s linear;
+  transform-origin: 50% 426px;
+}
+
+#wrapper[data-step='2'] #svg-wrapper svg #water {
+  transition: all 10s linear;
+  transform: scaleY(0.2);
+}
+
+
+
+// WATER SURFACE
+#wrapper #svg-wrapper svg #water-surface {
+  transition: all 0.1s linear;
+  transform-origin: 50% 271px;
+}
+
+#wrapper[data-step='2'] #svg-wrapper svg #water-surface {
+  transition: all 10s linear;
+  transform: translateY(124px);
+}
+
+
+$bubleTime: 5s;
+
+// BUBLES
+#wrapper #svg-wrapper svg #bubble-0 {
+  opacity: 0;
+  transform-origin: 446px 300px;
+}
+#wrapper[data-step='2'] #svg-wrapper svg #bubble-0 {
+  animation: bubleAnimation_0 $bubleTime infinite;
+  animation-timing-function: ease;
+  animation-delay: 0;
+}
+@keyframes bubleAnimation_0 {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  10% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(1.6);
+  }
+}
+
+
+#wrapper #svg-wrapper svg #bubble-1 {
+  opacity: 0;
+  transform-origin: 431px 320px;
+}
+#wrapper[data-step='2'] #svg-wrapper svg #bubble-1 {
+  animation: bubleAnimation_1 $bubleTime / 1.1 infinite;
+  animation-timing-function: linear;
+  animation-delay: $bubleTime / 5;
+}
+@keyframes bubleAnimation_1 {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  10% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-42px) scale(2);
+  }
+}
+
+
+#wrapper #svg-wrapper svg #bubble-2 {
+  opacity: 0;
+  transform-origin: 450px 333px;
+}
+#wrapper[data-step='2'] #svg-wrapper svg #bubble-2 {
+  animation: bubleAnimation_2 $bubleTime / 1.8 infinite;
+  animation-timing-function: linear;
+  animation-delay: $bubleTime / 3;
+}
+@keyframes bubleAnimation_2 {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  10% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-24px) scale(1.4);
+  }
+}
+
+
+
+#wrapper #svg-wrapper svg #bubble-3 {
+  opacity: 0;
+  transform-origin: 434px 355px;
+}
+#wrapper[data-step='2'] #svg-wrapper svg #bubble-3 {
+  animation: bubleAnimation_3 $bubleTime * 1.2 infinite;
+  animation-timing-function: ease-in;
+  animation-delay: $bubleTime / 2.1;
+}
+@keyframes bubleAnimation_3 {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  10% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-36px) scale(1.4);
+  }
+}
+
+
+
+#wrapper #svg-wrapper svg #bubble-4 {
+  opacity: 0;
+  transform-origin: 449px 369px;
+}
+#wrapper[data-step='2'] #svg-wrapper svg #bubble-4 {
+  animation: bubleAnimation_4 $bubleTime / 1.2 infinite;
+  animation-timing-function: ease-in;
+  animation-delay: $bubleTime / 4;
+}
+@keyframes bubleAnimation_4 {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  10% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-28px) scale(1.1);
+  }
+}
+
+
+
+#wrapper #svg-wrapper svg #bubble-5 {
+  opacity: 0;
+  transform-origin: 432px 380px;
+}
+#wrapper[data-step='2'] #svg-wrapper svg #bubble-5 {
+  animation: bubleAnimation_5 $bubleTime / 1.5 infinite;
+  animation-timing-function: ease-in;
+  animation-delay: $bubleTime / 5;
+}
+@keyframes bubleAnimation_5 {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  10% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-9px) scale(1.9);
+  }
+}

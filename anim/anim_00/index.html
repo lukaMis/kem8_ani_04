@@ -1,0 +1,114 @@
+<!doctype html>
+  <html lang="sl">
+    <head>
+      <!-- BRAGGING -->
+      <link rel="author" href="https://plus.google.com/+LukaMis/about" title="Luka Mis on Google+"/>
+      
+      <!-- META -->
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+      
+      <!-- TITLE -->
+      <title data-i18n="[html]title"></title>
+      
+      <!-- CSS -->
+      <link rel="stylesheet" href="../../../assets/css/structure.min.css" />
+      <link rel="stylesheet" href="../assets/css/sharedStyles.min.css" />
+      <link rel="stylesheet" href="assets/css/styles.min.css" />
+    </head>
+  
+    <body class="loading">
+      <div class="wrapper">
+
+        <div id="title-wrapper">
+          <p id="title"><span id="exerciseTitle"></span> <span id="animTitle"></span></p>
+          <p id="reaction-00"><span id="reaction-00_00"></span><span class="arrow"></span><span id="reaction-00_01"></span></p>
+          <p id="reaction-01"><span id="reaction-01_00"></span><span class="arrow"></span><span id="reaction-01_01"></span></p>
+        </div>
+
+        <div class="stepper-wrapper ">
+          <div class="stepper">
+            <div class="stepper-icon backward"></div>
+            <div class="stepper-text-wrapper">
+              <div class="stepper-text">
+                <p>
+                  <span class="steps-current">1</span>
+                  <span class="steps-slash">|</span>
+                  <span class="steps-total">1</span>
+                </p>
+              </div>
+            </div>
+            <div class="stepper-icon forward"></div>
+          </div>
+          <!-- stepper -->
+        </div>
+        <!-- stepper-wrapper -->
+        
+        <div class="step-00" id="steps-wrapper">
+          
+          <div class="step" id="step-00">
+            
+            <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1024px; height:768px">
+              <canvas id="step-0" width="1024" height="768" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+              <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1024px; height:768px; position: absolute; left: 0px; top: 0px; display: block;">
+              </div>
+            </div>
+
+            <div class="captions-wrapper">
+              <p class="caption"></p>
+            </div>
+          </div>
+          <!-- step-00 -->
+
+          <div class="step" id="step-01">
+            <div id="canvas-1-wrapper">
+              <canvas id="step-1" width="310" height="310" ></canvas>
+            </div>
+            <div class="captions-wrapper">
+              <p class="caption"></p>
+            </div>
+          </div>
+          <!-- step-01 -->
+
+        </div>
+        <!-- step-wrapper -->
+
+      </div>
+      <!-- wrapper -->
+
+
+      <!-- SCRIPTS -->
+
+      <!-- jquery -->
+      <script src="../../../assets/jquery/jquery.min.js"></script>
+      
+      <!-- fastclick -->
+      <script src="../../../assets/fastclick/fastclick.min.js"></script>
+     
+      <!-- annotation -->
+      <script src="../../../assets/js/annotation.min.js"></script>
+
+      <!-- Stepper  -->
+      <script src="../../../assets/js/Stepper.min.js"></script>
+      
+      <!-- createjs -->
+      <script type="text/javascript" src="../assets/js/createjs-2015.11.26.min.js"></script>
+
+      <!-- export -->
+      <script type="text/javascript" src="assets/js/anim_00.js"></script>
+
+      <!-- PRODUCTION SHARED SCRIPT  -->
+      <script type="text/javascript" src="../assets/js/bundle.min.js"></script>
+
+
+
+      <!-- DEV SCRIPT --> 
+      <!-- <script type="text/javascript" src="assets/js/src/init.js"></script> -->
+
+
+      <!-- PRODUCTION SCRIPT  -->
+      <script type="text/javascript" src="assets/js/bundle.min.js"></script>
+    </body>
+  </html>

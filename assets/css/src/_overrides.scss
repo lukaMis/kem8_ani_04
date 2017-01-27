@@ -1,0 +1,9 @@
+
+.icon-annotation {
+  transition: all 0.35s ease-out;
+  left: 152px;
+}
+
+.icon-annotation.off-canvas {
+  transform: translateX(322px);
+}

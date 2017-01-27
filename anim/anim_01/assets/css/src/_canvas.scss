@@ -1,0 +1,37 @@
+
+
+#canvases-wrapper {
+  position: absolute;
+  width: 1024px;
+  height: 768px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+
+.canvas-wrapper {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0);
+  border-radius: 50%;
+  border: 1px solid rgb(60, 60, 60);
+  overflow: hidden;
+}
+
+
+.canvas-wrapper canvas {
+  background-color: rgb(255, 255, 255);
+}
+
+
+#canvas-O-wrapper {
+  top: 212px;
+  left: 128px;
+}
+
+#canvas-H-wrapper {
+  top: 86px;
+  left: 715px;
+}
