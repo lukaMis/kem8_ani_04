@@ -92,3 +92,25 @@
 #wrapper #svg-wrapper #jar #jarSalt {
   // display: none;
 }
+
+
+
+
+#wrapper[data-step="3"] #svg-wrapper #plateSalt {
+  transform: translate(4px, 240px);
+}
+
+#wrapper[data-step="3"] #svg-wrapper #jarSalt {
+  transform: translate(-10px, 233px);
+}
+
+#wrapper[data-step="3"] #svg-wrapper #plate {
+  display: none;
+}
+
+#wrapper[data-step="3"] #svg-wrapper #stick {
+  display: block;
+  // transform: skewY(20);
+  // transform-origin: 50% 100%;
+  // transform: skewX(-10deg);
+}
