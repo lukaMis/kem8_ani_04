@@ -18,10 +18,7 @@
   $(Stepper).on('stepperClicked', stepperHandler);
 
 
-  _fillInTheText();
-
-
-  function _fillInTheText() {
+  function fillInTheText() {
     $('#exerciseTitle').html( TEXT_DATA.title[0]);
     $('#animTitle').html( TEXT_DATA.title[1]);
 
@@ -71,5 +68,11 @@
     $('body').removeClass('loading');
     // window.parent.$('body').removeClass('loading');
   };
+
+  //  fill the text
+  fillInTheText();
+
+  // set default first step
+  setDataStep(1);
 
 })();

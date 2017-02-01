@@ -28,7 +28,6 @@ kem8_ani_04_anim_02.Step1 = () => {
   const CIRCLE_ROTATION_TWEEN_TIME = 30;
   const ANIMATION_START_DELAY = 1;
 
-
   const init = () => {
     $plate = $( '#wrapper #svg-wrapper #plate' );
     $jarSaltParticles = $( '#wrapper #svg-wrapper #jar #jarSalt g[id*="jarSaltParticle"]' );
@@ -75,22 +74,12 @@ kem8_ani_04_anim_02.Step1 = () => {
       let _newX = Math.floor(kem8_ani_04_anim_02.getRandomInRange(-20, 20));
       let _newY = Math.floor(kem8_ani_04_anim_02.getRandomInRange(230, 248));
       let particle = $($jarSaltParticles[i]);
-      timeline.to(particle, 0.35, {
+      timeline.to(particle, 0.05, {
         y: _newY,
         x: _newX,
         ease: Power0.easeNone
-      }, '-=0.42');
+      }, '-=' + (i/100));
     }
-
-    // timeline.to($circle0, 0, {
-    //   ease: Power0.easeNone,
-    //   onStart: function (e) {
-    //     $circle0.show();
-    //   },
-    //   onComplete: function() {
-    //     loopAtomsFix();
-    //   }
-    // });
   };
 
 
@@ -183,6 +172,7 @@ kem8_ani_04_anim_02.Step1 = () => {
     $circle0.hide();
     console.log('$circle0 HIDDEN');
     $plate.show();
+    
     supportTweensArray.length = 0;
     console.log('Step1 reset');
   };

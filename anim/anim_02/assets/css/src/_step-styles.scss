@@ -1,28 +1,32 @@
 
 
-#wrapper #svg-wrapper #circle-0 {
-  display: none;
-}
+// #wrapper #svg-wrapper #circle-0 {
+//   display: none;
+// }
 
-#wrapper #svg-wrapper #circle-1 {
-  display: none;
-}
+// #wrapper #svg-wrapper #circle-1 {
+//   display: none;
+// }
 
-#wrapper #svg-wrapper #circle-2 {
-  display: none;
-}
+// #wrapper #svg-wrapper #circle-2 {
+//   display: none;
+// }
 
-#wrapper #svg-wrapper #stick {
-  display: none;
-}
+// #wrapper #svg-wrapper #stick {
+//   display: none;
+// }
 
-#wrapper[data-step="1"] #svg-wrapper #circle-1 {
-  display: none !important;
-}
+// #wrapper[data-step="1"] #svg-wrapper #circle-1 {
+//   display: none !important;
+// }
 
-#wrapper[data-step="1"] #svg-wrapper #plateSalt {
-  display: none;
-}
+// #wrapper[data-step="1"] #svg-wrapper #plateSalt {
+//   display: none;
+// }
+
+// #wrapper[data-step="3"] #svg-wrapper #plate {
+//   display: none;
+// }
 
 
 
@@ -34,9 +38,6 @@
   transform: translate(-10px, 233px);
 }
 
-#wrapper[data-step="3"] #svg-wrapper #plate {
-  display: none;
-}
 
 #wrapper[data-step="3"] #svg-wrapper #stick {
   display: block;

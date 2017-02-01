@@ -5,6 +5,8 @@ kem8_ani_04_anim_02.Step2 = () => {
   'use strict';
   const instance = {};
 
+  const ANIMATION_START_DELAY = 5;
+
   let timeline;
 
   let supportTweensArray = [];
@@ -36,8 +38,6 @@ kem8_ani_04_anim_02.Step2 = () => {
   const CIRCLE_1_WOOBLE_TWEEN_TIME = 4;
   const MAX_CIRCLE_1_OFFSET = 4;
   const CIRCLE_1_ROTATION_TWEEN_TIME = 20;
-
-  const ANIMATION_START_DELAY = 5;
 
 
   const init = () => {
@@ -81,15 +81,15 @@ kem8_ani_04_anim_02.Step2 = () => {
       delay: ANIMATION_START_DELAY
     });
 
-    timeline.to($jarSaltParticles, 0, {
-      ease: Power0.easeNone,
-      y: 242
-    });
-    // timeline.staggerTo($saltParticles, 0.35, {
-    //   y: 242,
-    //   ease: Power0.easeNone
-    // }, '0.005', '-=0.42');
+    // timeline.to($jarSaltParticles, 0, {
+    //   ease: Power0.easeNone,
+    //   y: 242
+    // });
+    // TweenMax.set($jarSaltParticles, {
+    //   y: 242
+    // });
 
+    randomizeSaltInJar();
 
     timeline.to($plate, 0.35, {
       ease: Power0.easeNone,
@@ -98,22 +98,12 @@ kem8_ani_04_anim_02.Step2 = () => {
       transformOrigin: '100% 0%',
       onStart: function() {
         // $plate.show();
+        purInTheSalt();
       },
       onComplete: function() {
         // $plate.hide();
       }
     });
-
-    for (let i = 0; i < $saltParticles.length; i++) {
-      let _newX = Math.floor(kem8_ani_04_anim_02.getRandomInRange(-20, 20));
-      let _newY = Math.floor(kem8_ani_04_anim_02.getRandomInRange(230, 248));
-      let particle = $($saltParticles[i]);
-      timeline.to(particle, 0.35, {
-        y: _newY,
-        x: _newX,
-        ease: Power0.easeNone
-      }, '-=0.42');
-    }
 
 
     var tween = TweenMax.to($circle1, 0, {
@@ -124,6 +114,35 @@ kem8_ani_04_anim_02.Step2 = () => {
       }
     });
     supportTweensArray.push(tween);
+  };
+
+  const randomizeSaltInJar = () => {
+    // TweenMax.set($jarSaltParticles, {
+    //   y: 242
+    // });
+
+    for (let i = 0; i < $jarSaltParticles.length; i++) {
+      let _newX = Math.floor(kem8_ani_04_anim_02.getRandomInRange(-10, 10));
+      let _newY = Math.floor(kem8_ani_04_anim_02.getRandomInRange(242 - 12, 242 + 8));
+      let particle = $($jarSaltParticles[i]);
+      TweenMax.set(particle, {
+        y: _newY,
+        x: _newX,
+      });
+    }
+  };
+
+  const purInTheSalt = () => {
+    for (let i = 0; i < $saltParticles.length; i++) {
+      let _newX = Math.floor(kem8_ani_04_anim_02.getRandomInRange(-20, 20));
+      let _newY = Math.floor(kem8_ani_04_anim_02.getRandomInRange(230, 248));
+      let particle = $($saltParticles[i]);
+      timeline.to(particle, 0.05, {
+        y: _newY,
+        x: _newX,
+        ease: Power0.easeNone
+      }, '-=' + (i/100));
+    }
   };
 
 
