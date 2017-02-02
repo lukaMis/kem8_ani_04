@@ -1,13 +1,10 @@
 
-#steps-wrapper {
-  width: ( 1024px * 2 );
+
+#wrapper {
+  background-color: rgb(255, 255, 255);
 }
 
-.step:nth-of-type(1) {
-  // background-image: url('../images/step_00.png');
-}
-
-.step:nth-of-type(2) {
+#wrapper[data-step="2"] {
   background-image: url('../images/step_01.jpg');
 }
 
@@ -19,8 +16,6 @@ canvas#step-0 {
   top: 0;
   left: 0;
 }
-
-
 
 #canvas-1-wrapper {
   width: 310px;
@@ -34,9 +29,24 @@ canvas#step-0 {
   top: 215px;
 }
 
-canvas#step-1 {
+#canvas-1-wrapper canvas {
   width: 310px;
   height: 310px;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
+}
+
+
+#wrapper[data-step="1"] #canvas-1-wrapper {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#wrapper[data-step="2"] canvas#step-0 {
+  opacity: 0;
+  visibility: hidden;
+}
+
+canvas#step-0, #canvas-1-wrapper {
+  transition: opacity 0.2s linear;
 }
