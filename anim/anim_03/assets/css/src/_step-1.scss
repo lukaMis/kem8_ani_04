@@ -1,0 +1,29 @@
+
+
+// CIRCLE 0
+#wrapper[data-step="2"] #circle-0 g[id*="circle-0-molecule"] [id*="black"] {
+  opacity: 1;
+}
+
+#wrapper[data-step="2"] #circle-0 g[id*="circle-0-molecule"] [id*="red-0"] {
+  transform: translate(-3px, -3px);
+}
+
+#wrapper[data-step="2"] #circle-0 g[id*="circle-0-molecule"] [id*="red-1"] {
+  transform: translate(3px, 3px);
+}
+
+#wrapper[data-step="2"] #circle-0-molecule-0,
+#wrapper[data-step="2"] #circle-0-molecule-1 {
+  opacity: 0;
+}
+
+
+// CIRCLE 1
+#wrapper[data-step="2"] #circle-1 g[id*="circle-1-molecule"] [id*="black"] {
+  opacity: 0;
+}
+#wrapper[data-step="2"] #circle-1 g[id*="circle-1-molecule"] [id*="gray-0"],
+#wrapper[data-step="2"] #circle-1 g[id*="circle-1-molecule"] [id*="gray-1"] {
+  opacity: 0;
+}
