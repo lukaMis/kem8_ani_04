@@ -263,6 +263,7 @@ kem8_ani_04_anim_02.Step3 = () => {
     console.log('onCompleteCallback Step3');
     // $circle3.show();
     TweenMax.set($circle3, {opacity: 1});
+    TweenMax.set($stick, {opacity: 0});
   };
 
 
