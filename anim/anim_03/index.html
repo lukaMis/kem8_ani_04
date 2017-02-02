@@ -20,7 +20,7 @@
     </head>
   
     <body class="loading">
-      <div class="wrapper">
+      <div class="wrapper" id="wrapper">
 
         <div id="title-wrapper">
           <p id="title"><span id="exerciseTitle"></span> <span id="animTitle"></span></p>
@@ -45,25 +45,15 @@
           <!-- stepper -->
         </div>
         <!-- stepper-wrapper -->
-        
-        <div class="step-00" id="steps-wrapper">
-          
-          <div class="step" id="step-00">
-            <div class="captions-wrapper">
-              <p class="caption"></p>
-            </div>
-          </div>
-          <!-- step-00 -->
 
-          <div class="step" id="step-01">
-            <div class="captions-wrapper">
-              <p class="caption"></p>
-            </div>
-          </div>
-          <!-- step-01 -->
+        <div id="svg-wrapper"></div>
 
+        <div class="" id="">
+          <div class="captions-wrapper">
+            <p class="caption"></p>
+            <p class="caption"></p>
+          </div>
         </div>
-        <!-- step-wrapper -->
 
       </div>
       <!-- wrapper -->
@@ -84,13 +74,19 @@
       <script src="../../../assets/js/Stepper.min.js"></script>
 
 
-      <!-- DEV SCRIPTS --> 
+      <!-- DEV SCRIPT --> 
       <!-- DISABLE FOR PRODUCTION -->
-      <!-- <script type="text/javascript" src="../assets/js/src/init.js"></script> -->
+      <script type="text/javascript" src="assets/js/src/entry.js"></script>
+      
+      <script type="text/javascript" src="assets/js/src/Bootstrap.js"></script>
+      <script type="text/javascript" src="assets/js/src/Controller.js"></script>
+      <script type="text/javascript" src="assets/js/src/SvgLoader.js"></script>
+      
+      <script type="text/javascript" src="assets/js/src/init.js"></script>
 
 
 
-      <!-- PRODUCTION SCRIPT  -->
+      <!-- SHARED PRODUCTION SCRIPT  -->
       <script type="text/javascript" src="../assets/js/bundle.min.js"></script>
       
     </body>
