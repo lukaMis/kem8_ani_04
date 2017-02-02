@@ -42,7 +42,7 @@ kem8_ani_04_anim_02.Controller = () => {
     stepsInit();
     addListnerForStepper();
     // auto play first animation
-    // handleStep(1);
+    handleStep(1);
   };
 
   console.log('kem8_ani_04_anim_02.Controller');

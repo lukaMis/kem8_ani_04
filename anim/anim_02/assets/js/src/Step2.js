@@ -13,6 +13,7 @@ kem8_ani_04_anim_02.Step2 = () => {
 
   let $plate;
   let $saltParticles;
+  let $plateSalt;
 
   let $jarSaltParticles;
   let $circle0;
@@ -44,6 +45,8 @@ kem8_ani_04_anim_02.Step2 = () => {
     $plate = $( '#wrapper #svg-wrapper #plate' );
     $saltParticles = $( '#wrapper #svg-wrapper #plateSalt g[id*="saltParticle"]' );
 
+    $plateSalt = $( '#wrapper #svg-wrapper #plateSalt' );
+
     $jarSaltParticles = $( '#wrapper #svg-wrapper #jar #jarSalt g[id*="jarSaltParticle"]' );
 
     $circle0 = $( '#wrapper #svg-wrapper #circle-0' );
@@ -72,7 +75,10 @@ kem8_ani_04_anim_02.Step2 = () => {
 
   const play = () => {
 
-    $circle0.show();
+    // $circle0.show();
+    TweenMax.set($circle0, {opacity: 1});
+    TweenMax.set($plateSalt, {opacity: 1});
+
     loopAtomsCircle0Fix();
 
     timeline = new TimelineMax({
@@ -109,7 +115,8 @@ kem8_ani_04_anim_02.Step2 = () => {
     var tween = TweenMax.to($circle1, 0, {
       ease: Power0.easeNone,
       onComplete: function() {
-        $circle1.show();
+        // $circle1.show();
+        TweenMax.set($circle1, {opacity: 1});
         loopAtomsCircle1Fix();
       }
     });
@@ -243,12 +250,17 @@ kem8_ani_04_anim_02.Step2 = () => {
   const onStartCallback = () => {
     console.log('onStartCallback Step2');
 
-    $plate.show();
+    // $plate.show();
+    TweenMax.set($plate, {opacity: 1});
   };
 
 
   const onCompleteCallback = () => {
     console.log('onCompleteCallback Step2');
+    TweenMax.set($circle0, {opacity: 0});
+    TweenMax.set($circle1, {opacity: 0});
+    TweenMax.set($plate, {opacity: 0});
+
     TweenMax.to($circle_0_Mol_0, 0, {
       ease: Power0.easeNone,
       rotation: 0,
@@ -267,7 +279,7 @@ kem8_ani_04_anim_02.Step2 = () => {
       y: 0,
       transformOrigin: '50% 50%'
     });
-    $circle0.hide();
+    // $circle0.hide();
 
     TweenMax.to($circle_1_Mol_0, 0, {
       ease: Power0.easeNone,
@@ -294,9 +306,9 @@ kem8_ani_04_anim_02.Step2 = () => {
       y: 0,
       transformOrigin: '50% 50%'
     });
-    $circle1.hide();
+    // $circle1.hide();
 
-    $plate.hide();
+    // $plate.hide();
   };
 
 
@@ -336,7 +348,8 @@ kem8_ani_04_anim_02.Step2 = () => {
       y: 0,
       transformOrigin: '50% 50%'
     });
-    $circle0.hide();
+    // $circle0.hide();
+    TweenMax.set($circle0, {opacity: 0});
 
 
     TweenMax.to($circle_1_Mol_0, 0, {
@@ -364,7 +377,10 @@ kem8_ani_04_anim_02.Step2 = () => {
       y: 0,
       transformOrigin: '50% 50%'
     });
-    $circle1.hide();
+    // $circle1.hide();
+    TweenMax.set($circle1, {opacity: 0});
+
+    TweenMax.set($plateSalt, {opacity: 0});
 
     supportTweensArray.length = 0;
     console.log('Step2 reset');

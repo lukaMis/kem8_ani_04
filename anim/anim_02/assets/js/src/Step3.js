@@ -46,7 +46,8 @@ kem8_ani_04_anim_02.Step3 = () => {
 
 
   const init = () => {
-    $plate = $( '#wrapper #svg-wrapper #plate' ).hide();
+    $plate = $( '#wrapper #svg-wrapper #plate' );
+    // TweenMax.set($plate, {opacity: 0});
 
     $plateSaltParticles = $( '#wrapper #svg-wrapper #plateSalt g[id*="saltParticle"]' );
     $jarSaltParticles = $( '#wrapper #svg-wrapper #jar #jarSalt g[id*="jarSaltParticle"]' );
@@ -79,8 +80,11 @@ kem8_ani_04_anim_02.Step3 = () => {
 
   const play = () => {
 
-    $plate.hide();
+    // $plate.hide();
+    TweenMax.set($plate, {opacity: 0});
     // $circle3.show();
+    TweenMax.set($plateSalt, {opacity: 1});
+    TweenMax.set($stick, {opacity: 1});
 
     timeline = new TimelineMax({
       onStart: onStartCallback,
@@ -93,8 +97,8 @@ kem8_ani_04_anim_02.Step3 = () => {
       // x: -172,
       onComplete: function() {
         let jarData = Snap('#jar').getBBox();
-        let minX = Math.floor(jarData.x + 30);
-        let maxX = Math.floor(jarData.x + jarData.width - 30);
+        let minX = Math.floor(jarData.x + 40);
+        let maxX = Math.floor(jarData.x + jarData.width - 50);
         let minY = Math.floor(jarData.y + jarData.height - 40);
         let maxY = Math.floor(jarData.y + jarData.height - 20);
         makeBubbles(minX, maxX, minY, maxY);
@@ -257,7 +261,8 @@ kem8_ani_04_anim_02.Step3 = () => {
 
   const onCompleteCallback = () => {
     console.log('onCompleteCallback Step3');
-    $circle3.show();
+    // $circle3.show();
+    TweenMax.set($circle3, {opacity: 1});
   };
 
 
@@ -267,7 +272,10 @@ kem8_ani_04_anim_02.Step3 = () => {
     TweenMax.set($jar, {
       x: 0
     });
-    $circle3.hide();
+    // $circle3.hide();
+    TweenMax.set($circle3, {opacity: 0});
+    TweenMax.set($plateSalt, {opacity: 0});
+    TweenMax.set($stick, {opacity: 0});
   };
 
 

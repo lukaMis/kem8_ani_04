@@ -125,15 +125,19 @@ kem8_ani_04_anim_02.Step1 = () => {
 
   const onStartCallback = () => {
     console.log('onStartCallback Step1');
-    $plate.show();
+    // $plate.show();
+    // $plate.attr({opacity: 1});
+    TweenMax.set($plate, {opacity: 1});
   };
 
 
   const onCompleteCallback = () => {
     console.log('onCompleteCallback Step1');
-    $circle0.show();
+    // $circle0.show();
+    TweenMax.set($circle0, {opacity: 1});
     loopAtomsFix();
-    $plate.hide();
+    // $plate.hide();
+    TweenMax.set($plate, {opacity: 0});
   };
 
 
@@ -169,9 +173,11 @@ kem8_ani_04_anim_02.Step1 = () => {
       transformOrigin: '50% 50%'
     });
 
-    $circle0.hide();
+    // $circle0.hide();
+    TweenMax.set($circle0, {opacity: 0});
     console.log('$circle0 HIDDEN');
-    $plate.show();
+    // $plate.show();
+    TweenMax.set($plate, {opacity: 1});
     
     supportTweensArray.length = 0;
     console.log('Step1 reset');

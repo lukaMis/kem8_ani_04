@@ -1,35 +1,5 @@
 
 
-// #wrapper #svg-wrapper #circle-0 {
-//   display: none;
-// }
-
-// #wrapper #svg-wrapper #circle-1 {
-//   display: none;
-// }
-
-// #wrapper #svg-wrapper #circle-2 {
-//   display: none;
-// }
-
-// #wrapper #svg-wrapper #stick {
-//   display: none;
-// }
-
-// #wrapper[data-step="1"] #svg-wrapper #circle-1 {
-//   display: none !important;
-// }
-
-// #wrapper[data-step="1"] #svg-wrapper #plateSalt {
-//   display: none;
-// }
-
-// #wrapper[data-step="3"] #svg-wrapper #plate {
-//   display: none;
-// }
-
-
-
 #wrapper[data-step="3"] #svg-wrapper #plateSalt {
   transform: translate(4px, 240px);
 }

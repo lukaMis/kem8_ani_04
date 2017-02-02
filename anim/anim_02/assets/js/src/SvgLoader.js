@@ -13,6 +13,8 @@ kem8_ani_04_anim_02.SvgLoader = () => {
       // g = f.select("g");
       // hideCircles(f);
 
+      setDefaultVisibilityOfElements(f);
+
       // add svg to dom
       Snap('#svg-wrapper').append(f);
       
@@ -22,6 +24,15 @@ kem8_ani_04_anim_02.SvgLoader = () => {
       // parent iframe removes preloader on this event
       $(document).trigger('onContentLoaded');
     });
+  };
+
+  const setDefaultVisibilityOfElements = (f) => {
+    f.select('#circle-0').attr({opacity: 0});
+    f.select('#circle-1').attr({opacity: 0});
+    f.select('#circle-2').attr({opacity: 0});
+    f.select('#stick').attr({opacity: 0});
+    f.select('#plateSalt').attr({opacity: 0});
+    f.select('#plate').attr({opacity: 0});
   };
 
   /* API */
