@@ -5,11 +5,14 @@ kem8_ani_04_anim_03.Bootstrap = () => {
   'use strict';
   const instance = {};
 
+  const controller = kem8_ani_04_anim_03.Controller();
+
   const svgLoader = kem8_ani_04_anim_03.SvgLoader();
   $(svgLoader).one('svgLoaded', () => {
     console.log('svg loaded');
-    // controller.init();
-
+    
+    controller.init();
+    
     // parent iframe removes preloader on this event
     $(document).trigger('onContentLoaded');
   });
