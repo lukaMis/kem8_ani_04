@@ -11,27 +11,73 @@ kem8_ani_04_anim_03.Controller = () => {
   let fireArray = [];
 
   let rightCircleArray = [];
+  let leftCircleArray = [];
 
-  // for transfrom value :)
-  // console.log(this.target[0]._gsTransform.x );
+  let circlesArray = [];
+
+  const circleMoleculesSpeedArray = [
+    8, 
+    8
+  ];
+
+  const SHOW_CIRCLE_DELAY = 3;
 
 
   const getDomReferences = () => {
+    circlesArray[0] = $('#circle-0');
+    circlesArray[1] = $('#circle-1');
+    setInitialStateForCircles();
+
     fireArray[0] = $('#fire-0');
     fireArray[1] = $('#fire-1');
+    setInitialStateForFire();
 
-    rightCircleArray[0] = { target: $('#circle-1-molecule-0'), moveSpeedX: 1, moveSpeedY: 1 };
-    TweenMax.set(rightCircleArray[0].target, {
-      transformOrigin: '50% 50%'
-    });
+    for (let i = 0; i < 5; i++) {
+      rightCircleArray[i] = { target: $('#circle-1-molecule-' + i) };
+      TweenMax.set(rightCircleArray[i].target, {
+        transformOrigin: '50% 50%'
+      });
+    }
+
+    for (let i = 0; i < 6; i++) {
+      leftCircleArray[i] = { target: $('#circle-0-molecule-' + i) };
+      TweenMax.set(leftCircleArray[i].target, {
+        transformOrigin: '50% 50%'
+      });
+    }
   };
 
 
   const startAnimation = () => {
-    setInitialStateForFire();
-    fireAimation();
+    // fireAimation();
+    setTimeout(fireAimation, SHOW_CIRCLE_DELAY * 1000 / 3);
 
     rightCircleAnimation();
+    leftCircleAnimation();
+
+    circlesAnimation();
+  };
+
+  const setInitialStateForCircles = () => {
+    TweenMax.set(circlesArray[0], {
+      transformOrigin: '100% 25%',
+      scale: 0
+    });
+    TweenMax.set(circlesArray[1], {
+      transformOrigin: '0% 7%',
+      scale: 0
+    });
+  };
+
+
+  const circlesAnimation = () => {
+    TweenMax.to(circlesArray[0], 1, {
+      scale: 1,
+      delay: SHOW_CIRCLE_DELAY,
+      onComplete: function() {
+        TweenMax.to(circlesArray[1], 1, { scale: 1 });
+      }
+    });
   };
 
 
@@ -46,6 +92,7 @@ kem8_ani_04_anim_03.Controller = () => {
     });
   };
   
+
   const fireAimation = () => {
     TweenMax.set(fireArray[1], {
       scale: 1,
@@ -76,64 +123,59 @@ kem8_ani_04_anim_03.Controller = () => {
 
 
   const rightCircleAnimation = () => {
+    for (let i = 1; i < rightCircleArray.length; i++) {
+      getPointInCircle(rightCircleArray[i]);
+      TweenMax.to(rightCircleArray[i].target, circleMoleculesSpeedArray[0], {
+        ease: Power0.easeNone,
+        x: rightCircleArray[i].newX,
+        y: rightCircleArray[i].newY,
+        rotation: '+=360'
+      });
+    }
 
-
-    TweenMax.to(rightCircleArray[0].target, 1, {
+    getPointInCircle(rightCircleArray[0]);
+    TweenMax.to(rightCircleArray[0].target, circleMoleculesSpeedArray[0], {
       ease: Power0.easeNone,
-      // x: rightCircleArray[0].transformX,
-      // y: rightCircleArray[0].transformY,
-      // x: getPointInCircle().x,
-      // y: getPointInCircle().y,
-      rotation: '+=1',
+      x: rightCircleArray[0].newX,
+      y: rightCircleArray[0].newY,
+      rotation: '+=360',
       onComplete: function() {
         rightCircleAnimation();
-      },
-      onStart: function() {
-        // getDirection(this.target[0]._gsTransform, rightCircleArray[0]);
-        // getPointInCircle();
       }
     });
   };
 
-  const getPointInCircle = () => {
-    // let angle = getRandomNumber(0, 2 * Math.PI);
-    // let newX = Math.floor(110 - 33 * Math.cos(angle));
-    // let newY = Math.floor(110 - 33 Math.sin(angle));
-    console.log(newX, newY);
-    // return {
-    //   x: newX,
-    //   y: newY
-    // }
+
+  const leftCircleAnimation = () => {
+    for (let i = 1; i < leftCircleArray.length; i++) {
+      getPointInCircle(leftCircleArray[i]);
+      TweenMax.to(leftCircleArray[i].target, circleMoleculesSpeedArray[1], {
+        ease: Power0.easeNone,
+        x: leftCircleArray[i].newX,
+        y: leftCircleArray[i].newY,
+        rotation: '+=360'
+      });
+    }
+
+    getPointInCircle(leftCircleArray[0]);
+    TweenMax.to(leftCircleArray[0].target, circleMoleculesSpeedArray[1], {
+      ease: Power0.easeNone,
+      x: leftCircleArray[0].newX,
+      y: leftCircleArray[0].newY,
+      rotation: '+=360',
+      onComplete: function() {
+        leftCircleAnimation();
+      }
+    });
   };
 
-  const getDirection = (currentTransform, atom) => {
-    if(currentTransform.x > 78 && atom.moveSpeedX === 1) {
-      atom.moveSpeedX = atom.moveSpeedX * -1;
-    }
-    else if(currentTransform.x < -78 && atom.moveSpeedX === -1) {
-      atom.moveSpeedX = atom.moveSpeedX * -1;
-    }
-    // console.log( getRandomNumber(0.5, 1.5).toFixed(2) );
-    let returnDirectionX = (atom.moveSpeedX > 0) ? '+=':'-=';
-    returnDirectionX += Math.floor(getRandomNumber(1, 3));
-    // console.log(currentTransform.x, atom.moveSpeedX, returnDirectionX);
-    atom.transformX = returnDirectionX;
 
-
-    // console.log('currentTransform.y', currentTransform.y);
-    if(currentTransform.y > 78 && atom.moveSpeedY === 1) {
-      atom.moveSpeedY = atom.moveSpeedY * -1;
-      atom.moveSpeedX = atom.moveSpeedX * -1;
-    }
-    else if(currentTransform.y < -78 && atom.moveSpeedY === -1) {
-      atom.moveSpeedY = atom.moveSpeedY * -1;
-      atom.moveSpeedX = atom.moveSpeedX * -1;
-    }
-    let returnDirectionY = (atom.moveSpeedY > 0) ? '+=':'-=';
-    // console.log(currentTransform.y, atom.moveSpeedY, returnDirectionY);
-    returnDirectionY += Math.floor(getRandomNumber(1, 3));
-    atom.transformY = returnDirectionY;
-    // return returnDirection;
+  const getPointInCircle = (molecule) => {
+    let angle = getRandomNumber(0, 2 * Math.PI);
+    let newX = Math.floor(72 * Math.cos(angle));
+    let newY = Math.floor(72 * Math.sin(angle));
+    molecule.newX = newX;
+    molecule.newY = newY;
   };
 
 
